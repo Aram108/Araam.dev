@@ -28,6 +28,10 @@ export default function Home() {
 
   return (
     <main className="mesh-bg min-h-screen text-zinc-50 font-sans selection:bg-white/10 selection:text-white relative">
+      <div className="mesh-bg-overlay" />
+      <div className="glass-mesh-glow-1" />
+      <div className="glass-mesh-glow-2" />
+      <div className="glass-mesh-glow-3" />
       <div className="moving-grid" />
       <Navbar />
       <Hero />

@@ -36,7 +36,7 @@ export const ku = {
     },
     projects: {
         title: "پڕۆژەیێن من",
-        subtitle: "کارێن هەلبژارتی",
+        subtitle: "",
         view: "پڕۆژەی ببینە",
         source: "ژێده‌ر",
     },

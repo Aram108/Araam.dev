@@ -201,12 +201,14 @@ const BentoGrid = () => {
                 </div>
 
                 {/* 6. Languages — Solid Gray */}
-                <div className="bento-item col-span-2 lg:col-span-2 row-span-1 lg:row-span-1 bg-zinc-900 border border-zinc-800 rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow">
-                    <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="bento-item col-span-2 lg:col-span-2 row-span-2 lg:row-span-2 bg-zinc-900 border border-zinc-800 rounded-3xl p-5 sm:p-7 flex flex-col justify-between shadow relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.02),transparent_40%)] pointer-events-none" />
+
+                    <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center z-10 animate-fade">
                         <Languages size={15} className="text-white" />
                     </div>
 
-                    <div className="space-y-4 my-auto" dir="ltr">
+                    <div className="space-y-4 my-auto w-full z-10" dir="ltr">
                         <h4 className="text-[10px] font-bold text-white uppercase tracking-wider">{t.about.languages}</h4>
                         {[
                             { name: "Kurdish", lvl: "Native", val: 100 },
@@ -218,36 +220,50 @@ const BentoGrid = () => {
                                     <span className="text-zinc-300">{lg.name}</span>
                                     <span className="text-zinc-500 text-[10px]">{lg.lvl}</span>
                                 </div>
-                                <div className="w-full bg-white/5 h-1 rounded-full overflow-hidden border border-white/5">
-                                    <div className="bg-zinc-500 h-1 rounded-full transition-all duration-500" style={{ width: `${lg.val}%` }} />
+                                <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden border border-white/5">
+                                    <div className="bg-zinc-500 h-full rounded-full transition-all duration-700 group-hover:bg-white/80" style={{ width: `${lg.val}%` }} />
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-tight">
+                    <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-tight z-10">
                         Badini Dialect Main
                     </div>
                 </div>
 
-                {/* 7. Tech Stack — Glassmorphism */}
-                <div className="bento-item col-span-2 row-span-1 bg-white/[0.02] border border-white/5 backdrop-blur-md rounded-3xl p-5 sm:p-6 flex flex-col justify-between group shadow-xl">
-                    <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-                            <Code2 size={15} className="text-white" />
+                {/* 7. Tech Stack — Glassmorphism with white/silver mesh background */}
+                <div className="bento-item col-span-2 row-span-2 bg-gradient-to-br from-white/[0.04] to-white/[0.005] border border-white/10 backdrop-blur-xl rounded-3xl p-5 sm:p-7 flex flex-col justify-between group overflow-hidden relative shadow-2xl">
+                    {/* Symmetrical white/silver mesh glow inside the card */}
+                    <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_60%)] pointer-events-none" />
+
+                    {/* Header */}
+                    <div className="flex items-center gap-3 z-10">
+                        <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                            <Code2 size={16} className="text-white" />
                         </div>
-                        <h4 className="text-sm font-semibold tracking-tight text-white">{t.tech.title}</h4>
+                        <div>
+                            <h4 className="text-sm font-bold tracking-tight text-white">{t.tech.title}</h4>
+                            <p className="text-[10px] text-zinc-500 font-mono tracking-wider uppercase mt-0.5">{t.tech.subtitle}</p>
+                        </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-1.5 pt-2">
+                    {/* Tech Badge Grid */}
+                    <div className="flex flex-wrap gap-2 pt-4 pb-2 z-10 my-auto">
                         {stack.map((s, idx) => (
                             <span
                                 key={idx}
-                                className="px-2.5 py-1 rounded-lg text-[10px] font-medium text-zinc-300 bg-white/[0.015] border border-white/5 hover:border-white/12 transition-all cursor-default"
+                                className="px-3 py-1.5 rounded-xl text-[11px] font-medium text-white/90 bg-white/[0.025] border border-white/8 hover:bg-white/[0.08] hover:border-white/20 hover:text-white transition-all duration-300 cursor-default shadow-[0_2px_10px_rgba(255,255,255,0.01)] hover:-translate-y-0.5"
                             >
                                 {s.name}
                             </span>
                         ))}
+                    </div>
+
+                    {/* Footer text */}
+                    <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider z-10">
+                        Modern Tech Ecosystem
                     </div>
                 </div>
 

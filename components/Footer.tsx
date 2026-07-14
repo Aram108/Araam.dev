@@ -17,19 +17,19 @@ const Footer = () => {
 
     const contactItems = [
         {
-            icon: <Mail size={14} className="text-zinc-500 flex-shrink-0" />,
+            icon: <Mail size={18} className="text-zinc-500 flex-shrink-0" />,
             label: "aramkrd8@gmail.com",
             href: "mailto:aramkrd8@gmail.com",
             ltr: false,
         },
         {
-            icon: <Phone size={14} className="text-zinc-500 flex-shrink-0" />,
+            icon: <Phone size={18} className="text-zinc-500 flex-shrink-0" />,
             label: "+964 750 843 9986",
             href: "tel:+9647508439986",
             ltr: true,
         },
         {
-            icon: <MapPin size={14} className="text-zinc-500 flex-shrink-0" />,
+            icon: <MapPin size={18} className="text-zinc-500 flex-shrink-0" />,
             label: t.about.duhok,
             href: null,
             ltr: false,
@@ -70,9 +70,9 @@ const Footer = () => {
                                 <a
                                     key={i}
                                     href={s.href}
-                                    className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/8 flex items-center justify-center text-zinc-500 hover:text-white hover:bg-white/8 transition-all duration-200"
+                                    className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/8 flex items-center justify-center text-zinc-500 hover:text-white hover:bg-white/8 transition-all duration-200"
                                 >
-                                    <s.icon size={14} />
+                                    <s.icon size={16} />
                                 </a>
                             ))}
                         </div>
@@ -81,7 +81,7 @@ const Footer = () => {
                     {/* Col 2 — Navigation */}
                     <div className="flex flex-col gap-4">
                         <p className="text-white text-[10px] font-semibold uppercase tracking-widest">
-                            {isRtl ? "ڕێکێشان" : "Navigation"}
+                            {isRtl ? "بەش" : "Navigation"}
                         </p>
                         <ul className="flex flex-col gap-2.5">
                             {navItems.map((item) => (
@@ -108,7 +108,7 @@ const Footer = () => {
                                     <li key={i}>
                                         <a
                                             href={item.href}
-                                            className="flex items-center gap-2.5 text-zinc-500 text-xs hover:text-white transition-colors duration-200"
+                                            className="flex items-center gap-3 text-zinc-500 text-sm hover:text-white transition-colors duration-200"
                                         >
                                             {item.icon}
                                             {item.ltr ? (
@@ -119,7 +119,7 @@ const Footer = () => {
                                         </a>
                                     </li>
                                 ) : (
-                                    <li key={i} className="flex items-center gap-2.5 text-zinc-500 text-xs">
+                                    <li key={i} className="flex items-center gap-3 text-zinc-500 text-sm">
                                         {item.icon}
                                         <span>{item.label}</span>
                                     </li>

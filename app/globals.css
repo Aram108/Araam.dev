@@ -71,12 +71,73 @@ body {
 
 /* Formal Monochrome Mesh — black, carbon, titanium and gray */
 .mesh-bg {
-  background-color: #050505;
+  background-color: #020202;
+  position: relative;
+}
+
+.mesh-bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
   background-image:
-    radial-gradient(at 10% 10%, rgba(255, 255, 255, 0.03) 0px, transparent 40%),
-    radial-gradient(at 90% 90%, rgba(255, 255, 255, 0.02) 0px, transparent 45%),
-    radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.01) 0px, transparent 35%);
-  background-attachment: fixed;
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 10% 40%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 90% 70%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 30% 90%, rgba(255, 255, 255, 0.03) 0%, transparent 55%),
+    radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Apple-style dot matrix frosted glass texture overlay */
+.mesh-bg-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.15;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 105%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 105%);
+  pointer-events: none;
+}
+
+/* Glass mesh glow objects for premium visual aesthetics */
+.glass-mesh-glow-1 {
+  position: fixed;
+  top: -15%;
+  left: 20%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 45%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.9;
+}
+
+.glass-mesh-glow-2 {
+  position: fixed;
+  bottom: -5%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.005) 50%, transparent 75%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.95;
+}
+
+.glass-mesh-glow-3 {
+  position: fixed;
+  top: 40%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 65%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: -2;
 }
 
 /* Scrollbar */
@@ -105,21 +166,20 @@ body {
 
 @keyframes moveGrid {
   0% {
-    background-position: 0 0;
-  }
-
-  15% {
-    background-position: 10px 10px;
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    background-position: 40px 40px;
+    transform: translate3d(-40px, -40px, 0);
   }
 }
 
 .moving-grid {
   position: fixed;
-  inset: 0;
+  top: -40px;
+  left: -40px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
   z-index: 0;
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
@@ -129,4 +189,5 @@ body {
   pointer-events: none;
   mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 60%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 60%, transparent 100%);
+  will-change: transform;
 }

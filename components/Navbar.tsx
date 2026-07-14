@@ -11,23 +11,54 @@ import {
     TiktokIcon,
 } from "./Icons";
 
+const UKFlagSVG = () => (
+    <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" className="w-full h-full select-none" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="t">
+            <path d="M0,0 v30 h60 v-30 z" />
+        </clipPath>
+        <rect width="60" height="30" fill="#012169" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" clipPath="url(#t)" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="2" clipPath="url(#t)" />
+        <path d="M30,0 V30 M0,15 H60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6" />
+    </svg>
+);
+
+const KurdistanFlagSVG = () => {
+    const rays = Array.from({ length: 21 }, (_, i) => {
+        const angle = (i * 360) / 21;
+        return (
+            <path
+                key={i}
+                d="M 0 -8.5 L 0.8 -3.2 L -0.8 -3.2 Z"
+                fill="#FEB813"
+                transform={`rotate(${angle})`}
+            />
+        );
+    });
+
+    return (
+        <svg viewBox="0 0 45 30" preserveAspectRatio="xMidYMid slice" className="w-full h-full select-none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="45" height="10" fill="#E41C2D" />
+            <rect y="10" width="45" height="10" fill="#FFFFFF" />
+            <rect y="20" width="45" height="10" fill="#1E8B38" />
+            <g transform="translate(22.5, 15)">
+                <circle r="3.2" fill="#FEB813" />
+                {rays}
+            </g>
+        </svg>
+    );
+};
+
 const UKFlag = () => (
-    <div className="w-4 h-4 rounded-full overflow-hidden flex-shrink-0 border border-white/10 select-none flex items-center justify-center">
-        <img
-            src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
-            alt="UK Flag"
-            className="w-full h-full object-cover scale-[1.1]"
-        />
+    <div className="w-4 h-4 rounded-full overflow-hidden flex-shrink-0 border border-white/10 select-none flex items-center justify-center bg-zinc-800">
+        <UKFlagSVG />
     </div>
 );
 
 const KurdistanFlag = () => (
-    <div className="w-4 h-4 rounded-full overflow-hidden flex-shrink-0 border border-white/10 select-none flex items-center justify-center">
-        <img
-            src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Flag_of_Kurdistan.svg"
-            alt="Kurdistan Flag"
-            className="w-full h-full object-cover scale-[1.1]"
-        />
+    <div className="w-4 h-4 rounded-full overflow-hidden flex-shrink-0 border border-white/10 select-none flex items-center justify-center bg-zinc-800">
+        <KurdistanFlagSVG />
     </div>
 );
 
