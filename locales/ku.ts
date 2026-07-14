@@ -17,6 +17,7 @@ export const ku = {
     },
     about: {
         title: "دەرباره‌ی من",
+        subtitle: "من پتر بنیاسە",
         age: "تەمەن",
         location: "جهـ",
         duhok: "دهۆک، کوردستان",
@@ -35,6 +36,7 @@ export const ku = {
     },
     projects: {
         title: "پڕۆژەیێن من",
+        subtitle: "کارێن هەلبژارتی",
         view: "پڕۆژەی ببینە",
         source: "ژێده‌ر",
     },
@@ -43,7 +45,7 @@ export const ku = {
         subtitle: "پەیوەندیێ بکە",
     },
     footer: {
-
+        rights: "هەمی ماف یێن پاراستینە.",
     },
     lang: {
         current: "کوردی (بادینی)",
