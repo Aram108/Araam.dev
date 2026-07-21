@@ -7,12 +7,12 @@ import { ExternalLink, ChevronDown } from "lucide-react";
 import { GithubIcon } from "./Icons";
 
 const projectList = [
-    {
-        title: "Interactive E-Commerce Platform",
-        description: "A feature-rich shopping ecosystem engineered with React Native, PHP backend, and structured MySQL data management. Delivers payment services, push updates, and active chat capabilities.",
-        tech: ["React Native", "PHP", "MySQL"],
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&auto=format&fit=crop&q=80",
-    },
+{
+    title: "Atlas — Live Weather Instrument",
+    description: "A high-performance weather dashboard featuring real-time atmospheric data, procedural HTML5 Canvas loops for rain and storm effects, and immersive 3D card physics powered by GSAP.",
+    tech: ["HTML5", "CSS3", "JavaScript", "GSAP", "Canvas API"],
+    image: "/projects/atlas-preview.png", // ئەو ناڤ و مۆدێلێ وێنەیێ مە د فۆڵدەرێ public دا داناى
+},
     {
         title: "Security Threat Radar",
         description: "A premium network administration dashboard that charts active device logs, tracks threat patterns via Python analytics, and issues early alert reports.",
@@ -281,7 +281,7 @@ const Projects = () => {
                             {/* Links Footer */}
                             <div className="flex items-center gap-4 mt-1 pt-4 border-t border-white/5">
                                 <a
-                                    href="#"
+                                    href="https://aram108.github.io/weather/"
                                     className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-black text-xs font-bold transition duration-200 uppercase"
                                 >
                                     <span>Visit Site</span>
